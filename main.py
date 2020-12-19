@@ -54,7 +54,7 @@ cv2.createTrackbar("Minimum Area","TrackBars",1000,10000,empty)
 
 
 while True:
-    img = cv2.imread("film.png")
+    img = cv2.imread("2_film.jpg")
     imgContour = img.copy()
     cx = cv2.getTrackbarPos("Canny X", "TrackBars")
     cy = cv2.getTrackbarPos("Canny Y","TrackBars")
@@ -74,7 +74,7 @@ while True:
     imageContour = getContours(imgErode,4,minArea)
     #print(imgContour)
 
-    imgStack = utlis.stackImages(.4, ([img,imgThres, imgContour]))
+    imgStack = utlis.stackImages(.15, ([img,imgThres, imgContour]))
     imgContour = cv2.resize(imgContour,(0,0),None,.5,.5)
 
     cv2.imshow("Image Stacks", imgStack)
